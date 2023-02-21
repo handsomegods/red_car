@@ -4,7 +4,6 @@
 #include <thread>
 #include <mutex>
 #include <time.h>
-#include <Windows.h>
 #include <algorithm>
 #include <opencv2\highgui\highgui.hpp>
 #include <opencv2\imgproc\imgproc.hpp>
@@ -17,8 +16,8 @@
 using namespace std;
 using namespace cv;
 bool mode = true;
-  //VideoCapture capture("E:\\vs\\red.mp4");
-  VideoCapture capture("http://blu:123@192.168.1.7:8081/");
+  VideoCapture capture("E:\\vs\\red.mp4");
+  //VideoCapture capture("http://blu:123@192.168.1.7:8081/");
 
 //缓存容器
 	vector<Mat> m_vec_frame;
@@ -34,7 +33,7 @@ void run()
 
 	Mat current_frame;
 	capture >> current_frame;
-	Sleep(50);
+	waitKey(50);
 	while (1)
 	{
 		capture >> current_frame;
